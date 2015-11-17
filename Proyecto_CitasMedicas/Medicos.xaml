@@ -1,0 +1,16 @@
+﻿<Window x:Class="Proyecto_CitasMedicas.Medicos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Medicos" Height="348.113" Width="533.491" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="77*"/>
+            <ColumnDefinition Width="69*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Registrar" HorizontalAlignment="Left" Margin="158,11,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="158,36,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+        <Button Content="Modificar" HorizontalAlignment="Left" Margin="158,61,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+        <Button Content="Consultas" HorizontalAlignment="Left" Margin="158,86,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+
+    </Grid>
+</Window>

@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Proyecto_CitasMedicas.miProyecto
 {
-    public class Paciente
+    public class Afiliacion
     {
-        
+        public int id { get; set; }
+        public int numAfiliacion { get; set; }
+        public string tipoAf { get; set; }
+
     }
 }

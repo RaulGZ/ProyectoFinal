@@ -60,28 +60,66 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Afiliaciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Hospital.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Afiliaciones.xaml.cs">
+      <DependentUpon>Afiliaciones.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hospital.xaml.cs">
+      <DependentUpon>Hospital.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Medicos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paciente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Medicos.xaml.cs">
+      <DependentUpon>Medicos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201511131637173_Hospital.cs" />
     <Compile Include="Migrations\201511131637173_Hospital.Designer.cs">
       <DependentUpon>201511131637173_Hospital.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511171705400_tablas.cs" />
+    <Compile Include="Migrations\201511171705400_tablas.Designer.cs">
+      <DependentUpon>201511171705400_tablas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511171708057_creartablas.cs" />
+    <Compile Include="Migrations\201511171708057_creartablas.Designer.cs">
+      <DependentUpon>201511171708057_creartablas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="miProyecto\Afiliacion.cs" />
     <Compile Include="miProyecto\Hospital.cs" />
+    <Compile Include="miProyecto\Medico.cs" />
     <Compile Include="miProyecto\Paciente.cs" />
     <Compile Include="miProyecto\proyectoCM.cs" />
+    <Compile Include="Paciente.xaml.cs">
+      <DependentUpon>Paciente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -98,6 +136,12 @@
     <EmbeddedResource Include="Migrations\201511131637173_Hospital.resx">
       <DependentUpon>201511131637173_Hospital.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511171705400_tablas.resx">
+      <DependentUpon>201511171705400_tablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511171708057_creartablas.resx">
+      <DependentUpon>201511171708057_creartablas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -110,7 +154,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
