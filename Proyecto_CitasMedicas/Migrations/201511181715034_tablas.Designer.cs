@@ -7,13 +7,13 @@ namespace Proyecto_CitasMedicas.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class paciente : IMigrationMetadata
+    public sealed partial class tablas : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(paciente));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(tablas));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511181532178_paciente"; }
+            get { return "201511181715034_tablas"; }
         }
         
         string IMigrationMetadata.Source

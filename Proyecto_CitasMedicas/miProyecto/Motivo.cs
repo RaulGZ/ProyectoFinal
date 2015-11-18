@@ -7,13 +7,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Proyecto_CitasMedicas.miProyecto
 {
-    public class Hospital
+    public class Motivo
     {
-        [Key]
-        public int idHospital { get; set; }
-        public String NomHospital { get; set; }
-        public string DirHospital { get; set; }
+    [Key]
+        public int idMotivo { get; set; }
+        public string nomMotivo { get; set; }
         public virtual ICollection<Cita> Cita { get; set; }
-
     }
 }

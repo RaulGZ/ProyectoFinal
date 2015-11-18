@@ -1,8 +1,28 @@
 ﻿<Window x:Class="Proyecto_CitasMedicas.Paciente"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Paciente" Height="300" Width="300" WindowStartupLocation="CenterScreen">
+        Title="Paciente" Height="360" Width="530" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Button Content="Registrar" HorizontalAlignment="Left" Margin="100,290,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="180,290,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Modificar" HorizontalAlignment="Left" Margin="260,290,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Consultas" HorizontalAlignment="Left" Margin="340,290,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="txid" HorizontalAlignment="Left" Height="23" Margin="118,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="nomPaciente" HorizontalAlignment="Left" Height="23" Margin="118,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="dirPaciente" HorizontalAlignment="Left" Height="23" Margin="118,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="PACIENTES" HorizontalAlignment="Left" Margin="206,0,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <Label Content="ID Paciente:" HorizontalAlignment="Left" Margin="24,41,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="57,103,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
+        <Label Content="Dirección:" HorizontalAlignment="Left" Margin="37,191,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
+        <TextBox x:Name="txedad" HorizontalAlignment="Left" Height="23" Margin="118,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Edad:" HorizontalAlignment="Left" Margin="70,134,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
+        <TextBox x:Name="txTelefono" HorizontalAlignment="Left" Height="23" Margin="118,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="45,162,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
+        <TextBox x:Name="txtSangre" HorizontalAlignment="Left" Height="23" Margin="118,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Tipo de Sangre:" HorizontalAlignment="Left" Margin="5,221,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
+        <TextBox x:Name="txtAlergias" HorizontalAlignment="Left" Height="23" Margin="118,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="¿Alergico a?:" HorizontalAlignment="Left" Margin="18,250,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
+        <TextBox x:Name="txAfiliacion" HorizontalAlignment="Left" Height="23" Margin="118,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Afiliación:" HorizontalAlignment="Left" Margin="30,73,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
     </Grid>
 </Window>

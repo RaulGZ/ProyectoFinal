@@ -45,8 +45,8 @@ namespace Proyecto_CitasMedicas
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            Afiliaciones af = new Afiliaciones();
-            af.Show();
+            Motivo mo = new Motivo();
+            mo.Show();
         }
     }
 }

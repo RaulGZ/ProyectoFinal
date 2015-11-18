@@ -1,8 +1,18 @@
 ﻿<Window x:Class="Proyecto_CitasMedicas.Afiliaciones"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Afiliaciones" Height="300" Width="300" WindowStartupLocation="CenterScreen">
+        Title="Afiliaciones" Height="337" Width="427" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Label Content="Número de Afiliación:" HorizontalAlignment="Left" Margin="62,84,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="13"/>
+        <Label Content="Tipo de Afiliación:" HorizontalAlignment="Left" Margin="77,122,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="13"/>
+        <TextBox x:Name="txtNumeroAf" HorizontalAlignment="Left" Height="23" Margin="228,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Consolas" FontSize="13"/>
+        <TextBox x:Name="txtipoaf" HorizontalAlignment="Left" Height="23" Margin="228,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Consolas" FontSize="13"/>
+        <TextBox x:Name="txtid" HorizontalAlignment="Left" Height="23" Margin="228,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Consolas" FontSize="13"/>
+        <Label Content="ID Afiliación:" HorizontalAlignment="Left" Margin="112,49,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="13"/>
+        <Button Content="Registrar" HorizontalAlignment="Left" Margin="47,268,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="127,268,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Modificar" HorizontalAlignment="Left" Margin="207,268,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Consultas" HorizontalAlignment="Left" Margin="287,268,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="AFILIACIONES" HorizontalAlignment="Left" Margin="154,6,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
     </Grid>
 </Window>
