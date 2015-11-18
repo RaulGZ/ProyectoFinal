@@ -111,6 +111,14 @@
     <Compile Include="Migrations\201511171708057_creartablas.Designer.cs">
       <DependentUpon>201511171708057_creartablas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511181532178_paciente.cs" />
+    <Compile Include="Migrations\201511181532178_paciente.Designer.cs">
+      <DependentUpon>201511181532178_paciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511181533525_modpaciente.cs" />
+    <Compile Include="Migrations\201511181533525_modpaciente.Designer.cs">
+      <DependentUpon>201511181533525_modpaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="miProyecto\Afiliacion.cs" />
     <Compile Include="miProyecto\Hospital.cs" />
@@ -141,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511171708057_creartablas.resx">
       <DependentUpon>201511171708057_creartablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511181532178_paciente.resx">
+      <DependentUpon>201511181532178_paciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511181533525_modpaciente.resx">
+      <DependentUpon>201511181533525_modpaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
