@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Proyecto_CitasMedicas.miProyecto;
 
 namespace Proyecto_CitasMedicas
 {
@@ -22,6 +24,71 @@ namespace Proyecto_CitasMedicas
         public Motivo()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            //Registrar
+            if (Regex.IsMatch(txtNumeroAf.Text, @"^[a-zA-Z]+$"))
+            {
+                //1.- Instanciar la "Base de Datos"
+                proyectoCM db = new proyectoCM();
+                //2.- Instanciar 
+                Proyecto_CitasMedicas.miProyecto.Motivo mot = new Proyecto_CitasMedicas.miProyecto.Motivo();
+                mot.nomMotivo = txtNumeroAf.Text;
+                //agregar los datos capturados
+                db.Motivos.Add(mot);
+                db.SaveChanges();
+            }
+            else { MessageBox.Show("Revisar que solo sean letras en #Nombre de Motivo"); }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            //Eliminar
+            if (Regex.IsMatch(txtid.Text, @"\d+$"))
+            {
+                proyectoCM db = new proyectoCM();
+                //Buscar el id capturado en la caja de texto
+                int idMotivo = int.Parse(txtid.Text);
+                var mot = db.Motivos.SingleOrDefault(x => x.idMotivo == idMotivo);
+                if (mot != null)
+                {
+                    db.Motivos.Remove(mot);
+                    db.SaveChanges();
+                }
+            }
+            else { MessageBox.Show("Solo números en el campo ID"); }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            //Modificar
+            if (Regex.IsMatch(txtid.Text, @"\d+$"))
+            {
+                //1.- Instanciar "Base de Datos"
+                proyectoCM db = new proyectoCM();
+                //2.- Buscar el id capturado en la caja de texto
+                int idMotivo = int.Parse(txtid.Text);
+                //var es una variable dinamica
+                var mot = db.Motivos.SingleOrDefault(x => x.idMotivo == idMotivo);
+                if (mot != null)
+                {
+                    //asignar los nuevos valores
+                    mot.nomMotivo = txtNumeroAf.Text;
+                    db.SaveChanges();
+                }
+            }
+            else { MessageBox.Show("Solo números en el campo ID"); }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            //Consultar
+            proyectoCM db = new proyectoCM();
+            var registros = from s in db.Motivos
+                            select s;
+            dbgrid.ItemsSource = registros.ToList();
         }
     }
 }

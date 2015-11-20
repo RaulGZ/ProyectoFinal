@@ -9,13 +9,14 @@
         <TextBox x:Name="txtipoMedico" HorizontalAlignment="Left" Height="23" Margin="225,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Consolas" FontSize="13"/>
         <TextBox x:Name="txtid" HorizontalAlignment="Left" Height="23" Margin="225,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Consolas" FontSize="13"/>
         <Label Content="ID Médico:" HorizontalAlignment="Left" Margin="139,43,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="13"/>
-        <Button Content="Registrar" HorizontalAlignment="Left" Margin="54,277,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="134,277,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Modificar" HorizontalAlignment="Left" Margin="214,277,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Consultas" HorizontalAlignment="Left" Margin="294,277,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Registrar" HorizontalAlignment="Left" Margin="54,277,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="134,277,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button Content="Modificar" HorizontalAlignment="Left" Margin="214,277,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <Button Content="Consultas" HorizontalAlignment="Left" Margin="294,277,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
         <Label Content="MÉDICOS" HorizontalAlignment="Left" Margin="183,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
         <Label Content="Cedula Profesional:" HorizontalAlignment="Left" Margin="74,133,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="13"/>
         <TextBox x:Name="txCedula" HorizontalAlignment="Left" Height="23" Margin="225,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Consolas" FontSize="13"/>
+        <DataGrid x:Name="dbgrid" HorizontalAlignment="Left" Margin="37,162,0,0" VerticalAlignment="Top" Height="105" Width="362"/>
 
     </Grid>
 </Window>
