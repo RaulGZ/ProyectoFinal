@@ -6,7 +6,7 @@
         <Button Content="Registrar" HorizontalAlignment="Left" Margin="51,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Button Content="Eliminar" HorizontalAlignment="Left" Margin="131,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
         <Button Content="Modificar" HorizontalAlignment="Left" Margin="211,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
-        <Button Content="Consultas" HorizontalAlignment="Left" Margin="291,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
+        <Button Content="Consultar" HorizontalAlignment="Left" Margin="291,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
         <TextBox x:Name="txtid" HorizontalAlignment="Left" Height="23" Margin="192,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtnomHospital" HorizontalAlignment="Left" Height="23" Margin="192,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtdirHospital" HorizontalAlignment="Left" Height="23" Margin="192,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
