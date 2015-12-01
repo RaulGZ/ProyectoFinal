@@ -29,9 +29,9 @@ namespace Proyecto_CitasMedicas
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //Registrar
-            if (Regex.IsMatch(txtnomHospital.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txtnomHospital.Text, @"^[ a-zA-Z]+$"))
             {
-                if (Regex.IsMatch(txtdirHospital.Text, @"^[a-zA-Z]+$"))
+                if (Regex.IsMatch(txtdirHospital.Text, @"^[ .a-zA-Z]+$"))
                 {
                     //1.- Instanciar la "Base de Datos"
                     proyectoCM db = new proyectoCM();
@@ -42,6 +42,9 @@ namespace Proyecto_CitasMedicas
                     //agregar los datos capturados
                     db.Hospitales.Add(hosp);
                     db.SaveChanges();
+                    MessageBox.Show("Registro Exitoso");
+                    txtdirHospital.Clear();
+                    txtnomHospital.Clear();
                 }
                 else { MessageBox.Show("Solo letras #Dirección de Hospital"); }
             }
@@ -50,6 +53,7 @@ namespace Proyecto_CitasMedicas
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            txtid.IsEnabled = true;
             //Eliminar
             if (Regex.IsMatch(txtid.Text, @"\d+$"))
             {
@@ -61,6 +65,8 @@ namespace Proyecto_CitasMedicas
                 {
                     db.Hospitales.Remove(hosp);
                     db.SaveChanges();
+                    MessageBox.Show("Registro Eliminado");
+                    txtid.Clear();
                 }
             }
             else { MessageBox.Show("Solo números #id"); }
@@ -68,6 +74,7 @@ namespace Proyecto_CitasMedicas
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            txtid.IsEnabled = true;
             //Modificar
             if (Regex.IsMatch(txtnomHospital.Text, @"^[a-zA-Z]+$"))
             {
@@ -85,6 +92,9 @@ namespace Proyecto_CitasMedicas
                         hosp.NomHospital = txtnomHospital.Text;
                         hosp.DirHospital = txtdirHospital.Text;
                         db.SaveChanges();
+                        MessageBox.Show("Registro Modificado Correctamente");
+                        txtdirHospital.Clear();
+                        txtnomHospital.Clear();
                     }
                 }
                 else { MessageBox.Show("Solo letras #Dirección de Hospital"); }

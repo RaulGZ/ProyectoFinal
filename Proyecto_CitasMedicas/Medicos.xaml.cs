@@ -31,7 +31,7 @@ namespace Proyecto_CitasMedicas
             //Registrar
             if (Regex.IsMatch(txtNumeroAf.Text, @"^[a-zA-Z]+$"))
             {
-                if (Regex.IsMatch(txtipoMedico.Text, @"^[a-zA-Z]+$"))
+                if (Regex.IsMatch(txtipoMedico.Text, @"^[ a-zA-Z]+$"))
                 {
                     if (Regex.IsMatch(txCedula.Text, @"\d+$"))
                     {
@@ -55,6 +55,7 @@ namespace Proyecto_CitasMedicas
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            txtid.IsEnabled = true;
             //Eliminar
             if (Regex.IsMatch(txtid.Text, @"\d+$"))
             {
@@ -73,10 +74,11 @@ namespace Proyecto_CitasMedicas
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            txtid.IsEnabled = true;
             //modificar
-            if (Regex.IsMatch(txtNumeroAf.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txtNumeroAf.Text, @"^[ a-zA-Z]+$"))
             {
-                if (Regex.IsMatch(txtipoMedico.Text, @"^[a-zA-Z]+$"))
+                if (Regex.IsMatch(txtipoMedico.Text, @"^[ a-zA-Z]+$"))
                 {
                     if (Regex.IsMatch(txCedula.Text, @"\d+$"))
                     {

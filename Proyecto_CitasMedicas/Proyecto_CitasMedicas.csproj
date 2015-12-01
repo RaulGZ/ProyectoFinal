@@ -160,9 +160,14 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Imagenes\icono_empleados.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\logo_bd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\background-glow-gradient.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

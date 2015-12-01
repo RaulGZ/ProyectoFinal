@@ -3,18 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Hospital" Height="339" Width="434" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="Registrar" HorizontalAlignment="Left" Margin="51,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="131,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
-        <Button Content="Modificar" HorizontalAlignment="Left" Margin="211,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
-        <Button Content="Consultar" HorizontalAlignment="Left" Margin="291,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
-        <TextBox x:Name="txtid" HorizontalAlignment="Left" Height="23" Margin="192,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Registrar" HorizontalAlignment="Left" Margin="41,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" FontSize="13"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="121,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2" FontSize="13"/>
+        <Button Content="Modificar" HorizontalAlignment="Left" Margin="201,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3" FontSize="13"/>
+        <Button Content="Consultar Todos" HorizontalAlignment="Left" Margin="281,271,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click_4" FontSize="13"/>
+        <TextBox x:Name="txtid" HorizontalAlignment="Left" Height="23" Margin="192,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <TextBox x:Name="txtnomHospital" HorizontalAlignment="Left" Height="23" Margin="192,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtdirHospital" HorizontalAlignment="Left" Height="23" Margin="192,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="HOSPITALES" HorizontalAlignment="Left" Margin="154,5,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <Label Content="HOSPITALES" HorizontalAlignment="Left" Margin="150,5,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
         <Label Content="ID Hospital:" HorizontalAlignment="Left" Margin="99,44,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
         <Label Content="Nombre:" HorizontalAlignment="Left" Margin="131,75,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
         <Label Content="Dirección:" HorizontalAlignment="Left" Margin="111,106,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
-        <DataGrid x:Name="dbgrid" HorizontalAlignment="Left" Margin="28,139,0,0" VerticalAlignment="Top" Height="112" Width="364"/>
+        <DataGrid x:Name="dbgrid" HorizontalAlignment="Left" Margin="28,142,0,0" VerticalAlignment="Top" Height="112" Width="364"/>
 
     </Grid>
 </Window>

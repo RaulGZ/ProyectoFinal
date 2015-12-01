@@ -3,14 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Motivo" Height="332.547" Width="417.453" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Nombre Motivo:" HorizontalAlignment="Left" Margin="84,84,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="13"/>
-        <TextBox x:Name="txtNumeroAf" HorizontalAlignment="Left" Height="23" Margin="201,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Consolas" FontSize="13"/>
-        <TextBox x:Name="txtid" HorizontalAlignment="Left" Height="23" Margin="201,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Consolas" FontSize="13"/>
-        <Label Content="ID Motivo:" HorizontalAlignment="Left" Margin="113,49,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="13"/>
-        <Button Content="Registrar" HorizontalAlignment="Left" Margin="47,261,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="127,261,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
-        <Button Content="Modificar" HorizontalAlignment="Left" Margin="207,261,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
-        <Button Content="Consultar" HorizontalAlignment="Left" Margin="287,261,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
+        <Label Content="Nombre Motivo:" HorizontalAlignment="Left" Margin="47,84,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="13"/>
+        <TextBox x:Name="txtNumeroAf" HorizontalAlignment="Left" Height="23" Margin="164,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" FontFamily="Consolas" FontSize="13"/>
+        <TextBox x:Name="txtid" HorizontalAlignment="Left" Height="23" Margin="164,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontFamily="Consolas" FontSize="13" IsEnabled="False"/>
+        <Label Content="ID Motivo:" HorizontalAlignment="Left" Margin="76,49,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="13"/>
+        <Button Content="Registrar" HorizontalAlignment="Left" Margin="37,261,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="117,261,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button Content="Modificar" HorizontalAlignment="Left" Margin="197,261,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <Button Content="Consultar Todo" HorizontalAlignment="Left" Margin="277,261,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_4"/>
         <Label Content="MOTIVOS" HorizontalAlignment="Left" Margin="154,6,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
         <DataGrid x:Name="dbgrid" HorizontalAlignment="Left" Margin="37,133,0,0" VerticalAlignment="Top" Height="110" Width="333"/>
     </Grid>

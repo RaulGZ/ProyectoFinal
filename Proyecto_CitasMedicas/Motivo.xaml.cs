@@ -29,7 +29,7 @@ namespace Proyecto_CitasMedicas
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //Registrar
-            if (Regex.IsMatch(txtNumeroAf.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txtNumeroAf.Text, @"^[ a-zA-Z]+$"))
             {
                 //1.- Instanciar la "Base de Datos"
                 proyectoCM db = new proyectoCM();
@@ -39,12 +39,16 @@ namespace Proyecto_CitasMedicas
                 //agregar los datos capturados
                 db.Motivos.Add(mot);
                 db.SaveChanges();
+                MessageBox.Show("Registro Exitoso");
+                txtNumeroAf.Clear();
+                
             }
             else { MessageBox.Show("Revisar que solo sean letras en #Nombre de Motivo"); }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            txtid.IsEnabled = true;
             //Eliminar
             if (Regex.IsMatch(txtid.Text, @"\d+$"))
             {
@@ -56,6 +60,7 @@ namespace Proyecto_CitasMedicas
                 {
                     db.Motivos.Remove(mot);
                     db.SaveChanges();
+                    MessageBox.Show("Registro Eliminado");
                 }
             }
             else { MessageBox.Show("Solo números en el campo ID"); }
@@ -63,6 +68,7 @@ namespace Proyecto_CitasMedicas
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            txtid.IsEnabled = true;
             //Modificar
             if (Regex.IsMatch(txtid.Text, @"\d+$"))
             {
@@ -75,8 +81,13 @@ namespace Proyecto_CitasMedicas
                 if (mot != null)
                 {
                     //asignar los nuevos valores
+                    if (Regex.IsMatch(txtNumeroAf.Text, @"^[ a-zA-Z]+$"))
+            {
                     mot.nomMotivo = txtNumeroAf.Text;
                     db.SaveChanges();
+                    MessageBox.Show("Registro Modificado Correctamente");
+            }
+                    else { MessageBox.Show("Captura solo letras en el Nombre del Motivo"); }
                 }
             }
             else { MessageBox.Show("Solo números en el campo ID"); }
@@ -84,7 +95,7 @@ namespace Proyecto_CitasMedicas
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //Consultar
+            //Consultar Todo
             proyectoCM db = new proyectoCM();
             var registros = from s in db.Motivos
                             select s;
