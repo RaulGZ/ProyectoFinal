@@ -37,7 +37,7 @@ namespace Proyecto_CitasMedicas
                     {
                         if (Regex.IsMatch(txAfiliacion.Text, @"\d+$"))
                         {
-                            if (Regex.IsMatch(txtdirPaciente.Text, @"^[ .a-zA-Z]+$"))
+                            if (Regex.IsMatch(txtdirPaciente.Text, @"^[ .a-zA-Z0123456789]+$"))
                             {
                                 if (Regex.IsMatch(txtSangre.Text, @"^[ +-a-zA-Z]+$"))
                                 {
@@ -121,7 +121,7 @@ namespace Proyecto_CitasMedicas
                     {
                         if (Regex.IsMatch(txAfiliacion.Text, @"\d+$"))
                         {
-                            if (Regex.IsMatch(txtdirPaciente.Text, @"^[ .a-zA-Z]+$"))
+                            if (Regex.IsMatch(txtdirPaciente.Text, @"^[ .a-zA-Z0123456789]+$"))
                             {
                                 if (Regex.IsMatch(txtSangre.Text, @"^[ +-a-zA-Z]+$"))
                                 {

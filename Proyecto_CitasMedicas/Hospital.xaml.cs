@@ -31,7 +31,7 @@ namespace Proyecto_CitasMedicas
             //Registrar
             if (Regex.IsMatch(txtnomHospital.Text, @"^[ a-zA-Z]+$"))
             {
-                if (Regex.IsMatch(txtdirHospital.Text, @"^[ .a-zA-Z]+$"))
+                if (Regex.IsMatch(txtdirHospital.Text, @"^[ .a-zA-Z0123456789]+$"))
                 {
                     //1.- Instanciar la "Base de Datos"
                     proyectoCM db = new proyectoCM();
@@ -76,9 +76,9 @@ namespace Proyecto_CitasMedicas
         {
             txtid.IsEnabled = true;
             //Modificar
-            if (Regex.IsMatch(txtnomHospital.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txtnomHospital.Text, @"^[ a-zA-Z]+$"))
             {
-                if (Regex.IsMatch(txtdirHospital.Text, @"^[a-zA-Z]+$"))
+                if (Regex.IsMatch(txtdirHospital.Text, @"^[ a-zA-Z0123456789]+$"))
                 {
                     //1.- Instanciar "Base de Datos"
                     proyectoCM db = new proyectoCM();

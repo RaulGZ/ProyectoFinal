@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
+using Proyecto_CitasMedicas.miProyecto;
 
 namespace Proyecto_CitasMedicas
 {
@@ -27,6 +29,26 @@ namespace Proyecto_CitasMedicas
         private void btLimpiar_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(txtAfiliacion.Text.Trim(), @"^\d+$"))
+            {
+                proyectoCM db = new proyectoCM();
+                Proyecto_CitasMedicas.miProyecto.Paciente pac = new Proyecto_CitasMedicas.miProyecto.Paciente();
+                /*pac.numAfiliacion = int.Parse(txtAfiliacion.Text);
+                int numAfiliacion = int.Parse(txtAfiliacion.Text);
+                var registros = from s in db.Pacientes
+                                where s.numAfiliacion == numAfiliacion
+                                select new
+                                {
+                                    s.numAfiliacion,
+                                    s.nomPaciente,
+                                    s.alergicoA
+                                };
+                dbgrid.ItemsSource = registros.ToList();*/
+            }
         }
     }
 }
