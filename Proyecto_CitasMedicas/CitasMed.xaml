@@ -1,25 +1,31 @@
 ﻿<Window x:Class="Proyecto_CitasMedicas.CitasMed"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="CitasMed" Height="438.615" Width="574.665" WindowStartupLocation="CenterScreen">
+        Title="CitasMed" Height="438.615" Width="574.665" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded_1" Icon="Imagenes/logo_bd.jpg">
     <Grid>
-        <Label Content="Generar Citas Médicas" HorizontalAlignment="Left" Margin="156,10,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontSize="24" FontWeight="Bold"/>
-        <Label Content="-----------------------------------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="26,42,0,0" VerticalAlignment="Top" Width="497" FontWeight="Bold"/>
-        <TextBox x:Name="txtAfiliacion" HorizontalAlignment="Left" Height="27" Margin="192,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" FontFamily="Maiandra GD" FontSize="14"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="340*"/>
+            <ColumnDefinition Width="227*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Generar Citas Médicas" HorizontalAlignment="Left" Margin="156,10,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label Content="-----------------------------------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="26,42,0,0" VerticalAlignment="Top" Width="497" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtAfiliacion" HorizontalAlignment="Left" Height="22" Margin="194,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontFamily="Maiandra GD" FontSize="14"/>
         <Label Content="Número de afiliación:" HorizontalAlignment="Left" Margin="41,71,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontSize="15"/>
         <Label Content="Fecha:" HorizontalAlignment="Left" Margin="41,215,0,0" VerticalAlignment="Top" FontSize="15" FontFamily="Maiandra GD"/>
-        <Image HorizontalAlignment="Left" Height="83" Margin="356,121,0,0" VerticalAlignment="Top" Width="137" Source="Imagenes/logo_bd.jpg"/>
-        <Button Content="Buscar" HorizontalAlignment="Left" Margin="336,72,0,0" VerticalAlignment="Top" Width="104" FontFamily="Maiandra GD" FontSize="14" Click="Button_Click_1"/>
-        <Button x:Name="btLimpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="453,296,0,0" VerticalAlignment="Top" Width="90" Click="btLimpiar_Click" FontSize="15" FontFamily="Maiandra GD"/>
+        <Image HorizontalAlignment="Left" Height="75" Margin="47,154,0,0" VerticalAlignment="Top" Width="137" Source="Imagenes/logo_bd.jpg" Grid.Column="1"/>
+        <Button Content="Buscar" HorizontalAlignment="Left" Margin="3,75,0,0" VerticalAlignment="Top" Width="81" FontFamily="Maiandra GD" FontSize="14" Click="Button_Click_1" Grid.Column="1"/>
+        <Button x:Name="btLimpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="120,304,0,0" VerticalAlignment="Top" Width="90" Click="btLimpiar_Click" FontSize="15" FontFamily="Maiandra GD" Grid.Column="1"/>
         <Label Content="Motivo de Consulta:" HorizontalAlignment="Left" Margin="41,107,0,0" VerticalAlignment="Top" Width="143" FontSize="15" FontFamily="Maiandra GD"/>
-        <ComboBox x:Name="cbMotivo" HorizontalAlignment="Left" Margin="192,109,0,0" VerticalAlignment="Top" Width="125" FontSize="15" FontFamily="Maiandra GD"/>
+        <ComboBox x:Name="cbMotivo" HorizontalAlignment="Left" Margin="192,109,0,0" VerticalAlignment="Top" Width="157" FontSize="15" FontFamily="Maiandra GD" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="46,186,0,0" TextWrapping="Wrap" Text="Hospital:" VerticalAlignment="Top" FontSize="15" FontFamily="Maiandra GD"/>
-        <ComboBox x:Name="cbHospital" HorizontalAlignment="Left" Margin="130,183,0,0" VerticalAlignment="Top" Width="187" FontSize="15" FontFamily="Maiandra GD"/>
-        <ComboBox x:Name="cbMedico" HorizontalAlignment="Left" Margin="130,146,0,0" VerticalAlignment="Top" Width="187" FontSize="15" FontFamily="Maiandra GD"/>
+        <ComboBox x:Name="cbHospital" HorizontalAlignment="Left" Margin="117,183,0,0" VerticalAlignment="Top" Width="219" FontSize="15" FontFamily="Maiandra GD"/>
+        <ComboBox x:Name="cbMedico" HorizontalAlignment="Left" Margin="117,146,0,0" VerticalAlignment="Top" Width="219" FontSize="15" FontFamily="Maiandra GD"/>
         <Label Content="Médico:" HorizontalAlignment="Left" Margin="41,144,0,0" VerticalAlignment="Top" FontSize="15" FontFamily="Maiandra GD"/>
-        <DataGrid x:Name="dbgrid" HorizontalAlignment="Left" Margin="41,254,0,0" VerticalAlignment="Top" Width="399" Height="134"/>
-        <Button Content="Aceptar" HorizontalAlignment="Left" Margin="453,325,0,0" VerticalAlignment="Top" Width="90" FontFamily="Maiandra GD" FontSize="15"/>
-        <DatePicker x:Name="calCita" HorizontalAlignment="Left" Margin="130,217,0,0" VerticalAlignment="Top" Width="187"/>
+        <DataGrid x:Name="dbgrid" HorizontalAlignment="Left" Margin="41,254,0,0" VerticalAlignment="Top" Width="399" Height="134" Grid.ColumnSpan="2"/>
+        <Button Content="Aceptar" HorizontalAlignment="Left" Margin="120,277,0,0" VerticalAlignment="Top" Width="90" FontFamily="Maiandra GD" FontSize="15" Grid.Column="1"/>
+        <DatePicker x:Name="calCita" HorizontalAlignment="Left" Margin="119,217,0,0" VerticalAlignment="Top" Width="146"/>
+        <Label x:Name="lbPaciente" Content="Nombre Paciente" Grid.Column="1" HorizontalAlignment="Left" Margin="32,109,0,0" VerticalAlignment="Top" Width="178" FontFamily="Maiandra GD" FontSize="13"/>
+        <Button Content="Salir" Grid.Column="1" HorizontalAlignment="Left" Margin="120,331,0,0" VerticalAlignment="Top" Width="90" FontFamily="Maiandra GD" FontSize="15" Click="Button_Click_2"/>
 
     </Grid>
 </Window>

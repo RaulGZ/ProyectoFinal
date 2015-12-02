@@ -26,18 +26,11 @@ namespace Proyecto_CitasMedicas
             InitializeComponent();
         }
 
-        private void btLimpiar_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (Regex.IsMatch(txtAfiliacion.Text.Trim(), @"^\d+$"))
             {
                 proyectoCM db = new proyectoCM();
-                Proyecto_CitasMedicas.miProyecto.Paciente pac = new Proyecto_CitasMedicas.miProyecto.Paciente();
-                /*pac.numAfiliacion = int.Parse(txtAfiliacion.Text);
                 int numAfiliacion = int.Parse(txtAfiliacion.Text);
                 var registros = from s in db.Pacientes
                                 where s.numAfiliacion == numAfiliacion
@@ -47,8 +40,40 @@ namespace Proyecto_CitasMedicas
                                     s.nomPaciente,
                                     s.alergicoA
                                 };
-                dbgrid.ItemsSource = registros.ToList();*/
+                dbgrid.ItemsSource = registros.ToList();
             }
+        }
+
+        private void Window_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            proyectoCM db = new proyectoCM();
+            //combobox del Motivo de Consulta
+            cbMotivo.ItemsSource = db.Motivos.ToList();
+            cbMotivo.DisplayMemberPath = "nomMotivo";
+            cbMotivo.SelectedValuePath = "idMotivo";
+            cbMotivo.SelectedIndex = 0;
+
+            //Medico
+            cbMedico.ItemsSource = db.Medicos.ToList();
+            cbMedico.DisplayMemberPath = "nomMedico";
+            cbMedico.SelectedValuePath = "idMedico";
+            cbMedico.SelectedIndex = 0;
+
+            //Hospital
+            cbHospital.ItemsSource = db.Hospitales.ToList();
+            cbHospital.DisplayMemberPath = "NomHospital";
+            cbHospital.SelectedValuePath = "idHospital";
+            cbHospital.SelectedIndex = 0;
+        }
+
+        private void btLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

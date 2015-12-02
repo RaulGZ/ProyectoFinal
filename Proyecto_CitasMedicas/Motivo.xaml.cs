@@ -61,6 +61,7 @@ namespace Proyecto_CitasMedicas
                     db.Motivos.Remove(mot);
                     db.SaveChanges();
                     MessageBox.Show("Registro Eliminado");
+                    txtid.Clear();
                 }
             }
             else { MessageBox.Show("Solo números en el campo ID"); }
@@ -82,11 +83,13 @@ namespace Proyecto_CitasMedicas
                 {
                     //asignar los nuevos valores
                     if (Regex.IsMatch(txtNumeroAf.Text, @"^[ a-zA-Z]+$"))
-            {
+                    {
                     mot.nomMotivo = txtNumeroAf.Text;
                     db.SaveChanges();
                     MessageBox.Show("Registro Modificado Correctamente");
-            }
+                    txtNumeroAf.Clear();
+                    txtid.Clear();
+                    }
                     else { MessageBox.Show("Captura solo letras en el Nombre del Motivo"); }
                 }
             }
@@ -100,6 +103,11 @@ namespace Proyecto_CitasMedicas
             var registros = from s in db.Motivos
                             select s;
             dbgrid.ItemsSource = registros.ToList();
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

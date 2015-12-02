@@ -1,21 +1,26 @@
 ﻿<Window x:Class="Proyecto_CitasMedicas.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="362.672" Width="525" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="401.478" Width="592.164" WindowStartupLocation="CenterScreen" Icon="Imagenes/logo_bd.jpg">
     <Grid Background="#FF4AD0DC">
-        <Label Content="Citas Médicas" HorizontalAlignment="Left" Margin="114,58,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontSize="48">
+        <Label Content="Citas Médicas" HorizontalAlignment="Left" Margin="142,61,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontSize="50">
             <Label.Background>
                 <ImageBrush ImageSource="Imagenes/icono_empleados.png"/>
             </Label.Background>
         </Label>
-        <Button Content="Hospital" HorizontalAlignment="Left" Margin="99,192,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" FontFamily="Maiandra GD" FontSize="18"/>
-        <Button Content="Paciente" HorizontalAlignment="Left" Margin="341,192,0,0" VerticalAlignment="Top" Width="75" FontFamily="Maiandra GD" FontSize="18" Click="Button_Click_2"/>
-        <Button Content="Médico" HorizontalAlignment="Left" Margin="179,192,0,0" VerticalAlignment="Top" Width="75" FontFamily="Maiandra GD" FontSize="18" Click="Button_Click_3"/>
-        <Button Content="Motivo" HorizontalAlignment="Left" Margin="259,192,0,0" VerticalAlignment="Top" Width="75" FontFamily="Maiandra GD" FontSize="18" Click="Button_Click_4"/>
-        <Label Content="Catálogos" HorizontalAlignment="Left" Margin="208,153,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontSize="21"/>
-        <Label Content="-----------------------------------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="497" FontWeight="Bold"/>
-        <Button Content="Generar Cita" HorizontalAlignment="Left" Margin="179,248,0,0" VerticalAlignment="Top" Width="155" Click="Button_Click_5" FontFamily="Maiandra GD" FontSize="18" FontWeight="Bold" Height="31"/>
-        <Label Content="-----------------------------------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Width="497" FontWeight="Bold"/>
+        <Button Content="Hospitales" HorizontalAlignment="Left" Margin="204,195,0,0" VerticalAlignment="Top" Width="94" Click="Button_Click_1" FontFamily="Maiandra GD" FontSize="18"/>
+        <Button Content="Pacientes" HorizontalAlignment="Left" Margin="107,195,0,0" VerticalAlignment="Top" Width="90" FontFamily="Maiandra GD" FontSize="18" Click="Button_Click_2"/>
+        <Button Content="Médicos" HorizontalAlignment="Left" Margin="304,195,0,0" VerticalAlignment="Top" Width="79" FontFamily="Maiandra GD" FontSize="18" Click="Button_Click_3"/>
+        <Button Content="Motivos" HorizontalAlignment="Left" Margin="390,195,0,0" VerticalAlignment="Top" Width="84" FontFamily="Maiandra GD" FontSize="18" Click="Button_Click_4"/>
+        <Label Content="Catálogos" HorizontalAlignment="Left" Margin="241,156,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontSize="21"/>
+        <Label Content="------------------------------------------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="43,130,0,0" VerticalAlignment="Top" Width="497" FontWeight="Bold"/>
+        <Button Content="Generar Cita" HorizontalAlignment="Left" Margin="212,251,0,0" VerticalAlignment="Top" Width="155" Click="Button_Click_5" FontFamily="Maiandra GD" FontSize="19" FontWeight="Bold" Height="31"/>
+        <Label Content="-----------------------------------------------------------------------------------------------------" HorizontalAlignment="Left" Margin="43,225,0,0" VerticalAlignment="Top" Width="497" FontWeight="Bold"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="499,291,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_6" Height="69" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/liberar-icono-5826-48.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

@@ -54,5 +54,10 @@ namespace Proyecto_CitasMedicas
             CitasMed cm = new CitasMed();
             cm.Show();
         }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

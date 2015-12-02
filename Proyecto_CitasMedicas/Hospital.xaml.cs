@@ -29,7 +29,7 @@ namespace Proyecto_CitasMedicas
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //Registrar
-            if (Regex.IsMatch(txtnomHospital.Text, @"^[ a-zA-Z]+$"))
+            if (Regex.IsMatch(txtnomHospital.Text, @"^[ .a-zA-Z0123456789]+$"))
             {
                 if (Regex.IsMatch(txtdirHospital.Text, @"^[ .a-zA-Z0123456789]+$"))
                 {
@@ -46,9 +46,9 @@ namespace Proyecto_CitasMedicas
                     txtdirHospital.Clear();
                     txtnomHospital.Clear();
                 }
-                else { MessageBox.Show("Solo letras #Dirección de Hospital"); }
+                else { MessageBox.Show("Captura Solo letras #Dirección de Hospital"); }
             }
-            else { MessageBox.Show("Solo letras #Nombre de Hospital"); }
+            else { MessageBox.Show("Captura #Nombre de Hospital \n solo LETRAS"); }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -69,17 +69,15 @@ namespace Proyecto_CitasMedicas
                     txtid.Clear();
                 }
             }
-            else { MessageBox.Show("Solo números #id"); }
+            else { MessageBox.Show("Debe capturar el ID \n solo números"); }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             txtid.IsEnabled = true;
             //Modificar
-            if (Regex.IsMatch(txtnomHospital.Text, @"^[ a-zA-Z]+$"))
+            if (Regex.IsMatch(txtid.Text, @"\d+$"))
             {
-                if (Regex.IsMatch(txtdirHospital.Text, @"^[ a-zA-Z0123456789]+$"))
-                {
                     //1.- Instanciar "Base de Datos"
                     proyectoCM db = new proyectoCM();
                     //2.- Buscar el id capturado en la caja de texto
@@ -88,19 +86,27 @@ namespace Proyecto_CitasMedicas
                     var hosp = db.Hospitales.SingleOrDefault(x => x.idHospital == idHospital);
                     if (hosp != null)
                     {
-                        //asignar los nuevos valores
-                        hosp.NomHospital = txtnomHospital.Text;
-                        hosp.DirHospital = txtdirHospital.Text;
-                        db.SaveChanges();
-                        MessageBox.Show("Registro Modificado Correctamente");
-                        txtdirHospital.Clear();
-                        txtnomHospital.Clear();
-                    }
-                }
-                else { MessageBox.Show("Solo letras #Dirección de Hospital"); }
+                        if (Regex.IsMatch(txtnomHospital.Text, @"^[ .a-zA-Z0123456789]+$"))
+                        {
+                            if (Regex.IsMatch(txtdirHospital.Text, @"^[ a-zA-Z0123456789]+$"))
+                            {
+                                //asignar los nuevos valores
+                                hosp.NomHospital = txtnomHospital.Text;
+                                hosp.DirHospital = txtdirHospital.Text;
+                                db.SaveChanges();
+                                MessageBox.Show("Registro Modificado Correctamente");
+                                txtdirHospital.Clear();
+                                txtnomHospital.Clear();
+                                txtid.Clear();
+                            }
+                            else { MessageBox.Show("Solo letras #Dirección de Hospital"); }
+                        }
+                        else { MessageBox.Show("Solo letras #Nombre de Hospital"); }
+                    }//if
             }
-            else { MessageBox.Show("Solo letras #Nombre de Hospital"); }
-        }
+            else { MessageBox.Show("Captura el ID \n Solo números"); }
+
+        }//boton modificar 
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
@@ -109,6 +115,11 @@ namespace Proyecto_CitasMedicas
             var registros = from s in db.Hospitales
                             select s;
             dbgrid.ItemsSource = registros.ToList();
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

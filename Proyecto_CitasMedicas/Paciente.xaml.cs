@@ -94,16 +94,16 @@ namespace Proyecto_CitasMedicas
                 {
                     db.Pacientes.Remove(paci);
                     db.SaveChanges();
-                    MessageBox.Show("Registro Eliminado");
+                    MessageBox.Show("Registro Eliminado Correctamente");
                     txAfiliacion.Clear();
                 }
             }
-            else { MessageBox.Show("Escribir solo números en la AFILIACIÓN"); }
+            else { MessageBox.Show("Capture en No. de Afiliación \n Solo NÚMEROS"); }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            // consultar todo
+            // consultar todos los pacientes
             proyectoCM db = new proyectoCM();
             var registros = from s in db.Pacientes
                             select s;
@@ -113,21 +113,8 @@ namespace Proyecto_CitasMedicas
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             //Modificar
-            if (Regex.IsMatch(txtnomPaciente.Text, @"^[ a-zA-Z]+$"))
-            {
-                if (Regex.IsMatch(txedad.Text, @"\d+$"))
-                {
-                    if (Regex.IsMatch(txTelefono.Text, @"\d+$"))
-                    {
-                        if (Regex.IsMatch(txAfiliacion.Text, @"\d+$"))
-                        {
-                            if (Regex.IsMatch(txtdirPaciente.Text, @"^[ .a-zA-Z0123456789]+$"))
-                            {
-                                if (Regex.IsMatch(txtSangre.Text, @"^[ +-a-zA-Z]+$"))
-                                {
-                                    if (Regex.IsMatch(txtAlergias.Text, @"^[ a-zA-Z]+$"))
-                                    {
-                                        
+            if (Regex.IsMatch(txAfiliacion.Text, @"\d+$"))
+            {  
                                         //1.- Instanciar "Base de Datos"
                                         proyectoCM db = new proyectoCM();
                                         //2.- Buscar el id capturado en la caja de texto
@@ -136,6 +123,18 @@ namespace Proyecto_CitasMedicas
                                         var pac = db.Pacientes.SingleOrDefault(x => x.numAfiliacion == numAfiliacion);
                                         if (pac != null)
                                         {
+                                            if (Regex.IsMatch(txtnomPaciente.Text, @"^[ a-zA-Z]+$"))
+                                            {
+                                                if (Regex.IsMatch(txedad.Text, @"\d+$"))
+                                                {
+                                                    if (Regex.IsMatch(txTelefono.Text, @"\d+$"))
+                                                    {
+                                                            if (Regex.IsMatch(txtdirPaciente.Text, @"^[ .a-zA-Z0123456789]+$"))
+                                                            {
+                                                                if (Regex.IsMatch(txtSangre.Text, @"^[ +-a-zA-Z]+$"))
+                                                                {
+                                                                    if (Regex.IsMatch(txtAlergias.Text, @"^[ a-zA-Z]+$"))
+                                                                    {
                                             //asignar los nuevos valores
                                             pac.numAfiliacion = int.Parse(txAfiliacion.Text);
                                             pac.nomPaciente = txtnomPaciente.Text;
@@ -153,28 +152,28 @@ namespace Proyecto_CitasMedicas
                                             txtdirPaciente.Clear();
                                             txtSangre.Clear();
                                             txtAlergias.Clear();
-                                        }
-                                        else { MessageBox.Show("Solo letras en el campo #Alergias"); }
-                                    }
-                                    else { MessageBox.Show("Solo letras en el campo #Tipo de Sangre"); }
-                                }
-                                else { MessageBox.Show("Solo letras #Domicilio"); }
-                            }
-                            else { MessageBox.Show("Solo números #Núm de Afiliación"); }
-                        }
-                        else { MessageBox.Show("Solo números #Teléfono"); }
-                    }
-                    else { MessageBox.Show("Solo números #edad"); }
-                }
-                else { MessageBox.Show("Solo letras #Nombre del Paciente"); }
+                                                                    }//if alergias
+                                                                    else { MessageBox.Show("Solo letras en el campo #Alergias"); }
+                                                                }
+                                                                else { MessageBox.Show("Solo letras en el campo #Tipo de Sangre"); }
+                                                            }
+                                                            else { MessageBox.Show("Solo letras #Domicilio"); }
+                                                    }
+                                                    else { MessageBox.Show("Solo números #Teléfono"); }
+                                                }
+                                                else { MessageBox.Show("Solo números #edad"); }
+                                            }
+                                            else { MessageBox.Show("Solo letras #Nombre del Paciente"); }
+                                        }//if
             }
-        }
+            else { MessageBox.Show("Captura el No. de Afiliación \n Solo números"); }              
+        }//boton modificar
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
             if (Regex.IsMatch(txAfiliacion.Text, @"\d+$"))
             {
-                //Consultar solo por ID
+                //Consultar solo por Afiliacion
                 proyectoCM db = new proyectoCM();
                 int numAfiliacion = int.Parse(txAfiliacion.Text);
                 var registros = from s in db.Pacientes
@@ -190,8 +189,14 @@ namespace Proyecto_CitasMedicas
                                     s.alergicoA
                                 };
                 dbgrid.ItemsSource = registros.ToList();
+                txAfiliacion.Clear();
             }
-            else { MessageBox.Show("Solo numeros #id"); }
+            else { MessageBox.Show("Error, Debe capturar el NÚMERO de Afiliación"); }
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Paciente" Height="360" Width="813.821" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="Registrar" HorizontalAlignment="Left" Margin="167,290,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="247,290,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
-        <Button Content="Modificar" HorizontalAlignment="Left" Margin="327,290,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
-        <Button Content="Consultar Todo" HorizontalAlignment="Left" Margin="407,290,0,0" VerticalAlignment="Top" Width="99" Click="Button_Click_3"/>
+        <Button Content="Registrar" HorizontalAlignment="Left" Margin="127,290,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="207,290,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button Content="Modificar" HorizontalAlignment="Left" Margin="287,290,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
+        <Button Content="Consultar Todo" HorizontalAlignment="Left" Margin="367,290,0,0" VerticalAlignment="Top" Width="99" Click="Button_Click_3"/>
         <TextBox x:Name="txtnomPaciente" HorizontalAlignment="Left" Height="23" Margin="131,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Consolas"/>
         <TextBox x:Name="txtdirPaciente" HorizontalAlignment="Left" Height="23" Margin="131,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontFamily="Consolas"/>
         <Label Content="PACIENTES" HorizontalAlignment="Left" Margin="346,15,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
@@ -23,7 +23,8 @@
         <TextBox x:Name="txAfiliacion" HorizontalAlignment="Left" Height="23" Margin="158,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" FontFamily="Consolas"/>
         <Label Content="No. de Afiliación:" HorizontalAlignment="Left" Margin="24,62,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
         <DataGrid x:Name="dbgrid" HorizontalAlignment="Left" Margin="266,77,0,0" VerticalAlignment="Top" Height="171" Width="514"/>
-        <Button Content="Consultar por Afiliación" HorizontalAlignment="Left" Margin="511,290,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click_5"/>
+        <Button Content="Consultar por Afiliación" HorizontalAlignment="Left" Margin="471,290,0,0" VerticalAlignment="Top" Width="139" Click="Button_Click_5"/>
         <Image HorizontalAlignment="Left" Height="46" Margin="459,12,0,0" VerticalAlignment="Top" Width="61" Source="Imagenes/icono_empleados.png"/>
+        <Button Content="Salir" HorizontalAlignment="Left" Margin="617,290,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_6"/>
     </Grid>
 </Window>
