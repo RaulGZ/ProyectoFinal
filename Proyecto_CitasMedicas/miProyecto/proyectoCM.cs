@@ -15,6 +15,7 @@ namespace Proyecto_CitasMedicas.miProyecto
         public DbSet<Medico> Medicos { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Motivo> Motivos { get; set; }
+        public DbSet<Cita> Citas { get; set; }
 
     }
 }

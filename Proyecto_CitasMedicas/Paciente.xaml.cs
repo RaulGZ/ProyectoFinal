@@ -68,11 +68,11 @@ namespace Proyecto_CitasMedicas
                                     }
                                     else { MessageBox.Show("Captura letras #Alergias"); }
                                 }
-                                else { MessageBox.Show("Debe capturar solo letras en el Tipo de Sangre"); }
+                                else { MessageBox.Show("Debe capturar letras en el Tipo de Sangre \n Ejemplo: B+ ó B positivo"); }
                             }
                             else { MessageBox.Show("Solo letras #Domicilio"); }
                         }
-                        else { MessageBox.Show("Solo números #Núm de Afiliación"); }
+                        else { MessageBox.Show("Solo números #Número de Afiliación"); }
                     }
                     else { MessageBox.Show("Solo números #Teléfono"); }
                 }
@@ -155,9 +155,9 @@ namespace Proyecto_CitasMedicas
                                                                     }//if alergias
                                                                     else { MessageBox.Show("Solo letras en el campo #Alergias"); }
                                                                 }
-                                                                else { MessageBox.Show("Solo letras en el campo #Tipo de Sangre"); }
+                                                                else { MessageBox.Show("Debe capturar letras en el Tipo de Sangre \n Ejemplo: B+ ó B positivo"); }
                                                             }
-                                                            else { MessageBox.Show("Solo letras #Domicilio"); }
+                                                            else { MessageBox.Show("Capture unicamente letras #Domicilio"); }
                                                     }
                                                     else { MessageBox.Show("Solo números #Teléfono"); }
                                                 }

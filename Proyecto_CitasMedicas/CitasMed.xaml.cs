@@ -21,7 +21,7 @@ namespace Proyecto_CitasMedicas
     /// </summary>
     public partial class CitasMed : Window
     {
-        private Paciente tmpProduct = null;
+        //private Paciente tmpProduct = null;
         private List<CitasMed> ShoppingCart;
 
         public CitasMed()
@@ -37,19 +37,19 @@ namespace Proyecto_CitasMedicas
             cbMotivo.ItemsSource = db.Motivos.ToList();
             cbMotivo.DisplayMemberPath = "nomMotivo";
             cbMotivo.SelectedValuePath = "idMotivo";
-            cbMotivo.SelectedIndex = 0;
+            //cbMotivo.SelectedIndex = 0;
 
             //Medico
             cbMedico.ItemsSource = db.Medicos.ToList();
             cbMedico.DisplayMemberPath = "nomMedico";
             cbMedico.SelectedValuePath = "idMedico";
-            cbMedico.SelectedIndex = 0;
+            //cbMedico.SelectedIndex = 0;
 
             //Hospital
             cbHospital.ItemsSource = db.Hospitales.ToList();
             cbHospital.DisplayMemberPath = "NomHospital";
             cbHospital.SelectedValuePath = "idHospital";
-            cbHospital.SelectedIndex = 0;
+            //cbHospital.SelectedIndex = 0;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -62,9 +62,7 @@ namespace Proyecto_CitasMedicas
                 Proyecto_CitasMedicas.miProyecto.Paciente s = db.Pacientes.SingleOrDefault(x => x.numAfiliacion == numAfiliacion);
                 if (s != null) //if product was found
                 {
-                    //store in a temp variable (if user clicks on add we will need this for the Array)
                     //tmpProduct = s;
-                    //We display the product information on a label 
                     lbPaciente.Content = string.Format("Nombre del Paciente: {0}", s.nomPaciente);
                     cbHospital.IsEnabled = true;
                     cbMedico.IsEnabled = true;
@@ -111,15 +109,33 @@ namespace Proyecto_CitasMedicas
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            proyectoCM db = new proyectoCM();
-            Cita cit = new Cita();
-            //cit.hrCita = calCita.ToString("MM/dd/yyyy");
+            if (cbMedico.SelectedIndex > -1 && cbHospital.SelectedIndex > -1 && cbMotivo.SelectedIndex > -1)
+            {
+                proyectoCM db = new proyectoCM();
+                Cita cit = new Cita();
+                //cit.hrCita = calCita.ToString("MM/dd/yyyy");
+                cit.MedicoidMedico = (int)cbMedico.SelectedValue;
+                cit.PacienteidPaciente = int.Parse(txtAfiliacion.Text);
+                cit.MotivoidMotivo = (int)cbMotivo.SelectedValue;
+                cit.HospitalidHospital = (int)cbHospital.SelectedValue;
+                db.Citas.Add(cit);
+                MessageBox.Show("Cita Generada Correctamente");
 
-            cit.MedicoidMedico = (int)cbMedico.SelectedValue;
-            cit.MotivoidMotivo = (int)cbMotivo.SelectedValue;
-            cit.HospitalidHospital = (int)cbHospital.SelectedValue;
-           // db.citas.Add(cit);
-            db.SaveChanges();
+                //Muestra las citas registradas.
+                /*var registros = from s in db.Citas
+                                select s;
+                dbgrid.ItemsSource = registros.ToList();*/
+                //db.SaveChanges();
+                
+            }//if
+            else {
+                MessageBox.Show("Verifique que se hayan seleccionado todos los campos");
+            }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }
