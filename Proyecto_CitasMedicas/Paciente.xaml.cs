@@ -98,7 +98,7 @@ namespace Proyecto_CitasMedicas
                     txAfiliacion.Clear();
                 }
             }
-            else { MessageBox.Show("Capture en No. de Afiliación \n Solo NÚMEROS"); }
+            else { MessageBox.Show("Capture el Número de Afiliación \n Solo NÚMEROS"); }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

@@ -21,27 +21,13 @@ namespace Proyecto_CitasMedicas
     /// </summary>
     public partial class CitasMed : Window
     {
+        private Paciente tmpProduct = null;
+        private List<CitasMed> ShoppingCart;
+
         public CitasMed()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (Regex.IsMatch(txtAfiliacion.Text.Trim(), @"^\d+$"))
-            {
-                proyectoCM db = new proyectoCM();
-                int numAfiliacion = int.Parse(txtAfiliacion.Text);
-                var registros = from s in db.Pacientes
-                                where s.numAfiliacion == numAfiliacion
-                                select new
-                                {
-                                    s.numAfiliacion,
-                                    s.nomPaciente,
-                                    s.alergicoA
-                                };
-                dbgrid.ItemsSource = registros.ToList();
-            }
+            ShoppingCart = new List<CitasMed>();
         }
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
@@ -66,9 +52,56 @@ namespace Proyecto_CitasMedicas
             cbHospital.SelectedIndex = 0;
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (Regex.IsMatch(txtAfiliacion.Text.Trim(), @"^\d+$"))
+            {
+                proyectoCM db = new proyectoCM();
+                int numAfiliacion = int.Parse(txtAfiliacion.Text);
+
+                Proyecto_CitasMedicas.miProyecto.Paciente s = db.Pacientes.SingleOrDefault(x => x.numAfiliacion == numAfiliacion);
+                if (s != null) //if product was found
+                {
+                    //store in a temp variable (if user clicks on add we will need this for the Array)
+                    //tmpProduct = s;
+                    //We display the product information on a label 
+                    lbPaciente.Content = string.Format("Nombre del Paciente: {0}", s.nomPaciente);
+                    cbHospital.IsEnabled = true;
+                    cbMedico.IsEnabled = true;
+                    cbMotivo.IsEnabled = true;
+                    calCita.IsEnabled = true;
+                }
+                else
+                {
+                    //if product was not found we display a user notification window
+                    MessageBox.Show("Afiliación no encontrada.", "Error de número de afiliación", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                }
+            }
+            else { MessageBox.Show("Capture el No. de Afiliación \n Solo NÚMEROS"); }
+
+        }
+
+        private void CleanUp()
+        {
+            //shopping cart = a new empty list
+            ShoppingCart = new List<CitasMed>();
+            //Textboxes and labels are set to defaults
+            txtAfiliacion.Text = string.Empty;
+            lbPaciente.Content = "Nombre de Paciente: ";
+            //DataGrid items are set to null
+            dbgrid.ItemsSource = null;
+            dbgrid.Items.Refresh();
+            //Tmp variable is erased using null
+            //tmpProduct = null;
+            cbMotivo.IsEnabled = false;
+            cbMedico.IsEnabled = false;
+            cbHospital.IsEnabled = false;
+            calCita.IsEnabled = false;
+        }
+
         private void btLimpiar_Click(object sender, RoutedEventArgs e)
         {
-
+            CleanUp();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
