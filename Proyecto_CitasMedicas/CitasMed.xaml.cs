@@ -108,5 +108,18 @@ namespace Proyecto_CitasMedicas
         {
             this.Close();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            proyectoCM db = new proyectoCM();
+            Cita cit = new Cita();
+            //cit.hrCita = calCita.ToString("MM/dd/yyyy");
+
+            cit.MedicoidMedico = (int)cbMedico.SelectedValue;
+            cit.MotivoidMotivo = (int)cbMotivo.SelectedValue;
+            cit.HospitalidHospital = (int)cbHospital.SelectedValue;
+           // db.citas.Add(cit);
+            db.SaveChanges();
+        }
     }
 }
